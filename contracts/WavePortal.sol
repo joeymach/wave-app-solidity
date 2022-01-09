@@ -31,10 +31,13 @@ contract WavePortal {
     }
 
     function wave(string memory _message) public payable {
-        // require(
-        //     lastWavedAt[msg.sender] + 2 minutes < block.timestamp,
-        //     "Wait 2m"
-        // );
+        /* 
+        // Optional feature: add cooldown of 2 mins to prevent spammers & bots
+        require(
+            lastWavedAt[msg.sender] + 2 minutes < block.timestamp,
+            "Wait 2m"
+        );
+        */
 
         lastWavedAt[msg.sender] = block.timestamp;
 
